@@ -1,0 +1,6 @@
+/assets/dist/
+/parsed/
+node_modules
+package-lock.json
+secrets.stencil.json
+config.stencil.json
