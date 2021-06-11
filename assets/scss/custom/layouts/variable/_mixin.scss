@@ -1,0 +1,13 @@
+@mixin maxWidth($break) {
+    @if $break == large {
+        @media only screen and (max-width: 1261px) { @content; }
+    } 
+
+    @else if $break == medium {
+        @media only screen and (max-width: 801px) { @content; }
+    } 
+
+    @else if $break == small {
+        @media only screen and (max-width: 551px) { @content; }
+    }
+}

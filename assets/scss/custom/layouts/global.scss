@@ -1,0 +1,72 @@
+html {
+    font-size: 16px; 
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.5em;
+}
+
+body {
+    font-family: $jost;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0;
+    
+}
+
+body, html {
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #444;
+    font-family: Jost,Arial,Helvetica,sans-serif;
+    font-weight: 400;
+    letter-spacing: .25px;
+    margin-bottom: .78571rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.button {
+    font-size: .875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+    min-width: 120px;
+    padding: 13px 5px 14px;
+    border-radius: 0;
+    border: 1px solid $dark-blue;
+    background-color: transparent;
+    color: $dark-blue;
+    font-family: inherit; 
+
+    &--primary {
+        font-size: 1rem;
+        padding: 21px 10px 22px;
+        background-color: $dark-blue;
+        color: $white;
+        border-color: $dark-blue;
+    }
+
+    &--light {
+        background-color: $light-blue;
+        color: $white;
+        border-color: $light-blue;
+        &:hover {
+            background-color: lighten(saturate(adjust-hue($light-blue, 1), 15.24), 21.37);
+            border-color: lighten(saturate(adjust-hue($light-blue, 1), 15.24), 21.37);
+            color: $white;
+        }
+    }
+
+    &--white {
+        background-color: $white;
+        color: $rust-brown;
+        border: none;
+        &:hover {
+            background-color: $white;
+            color: $rust-brown;
+        }
+    }
+}

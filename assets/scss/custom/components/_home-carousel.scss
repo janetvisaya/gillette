@@ -1,0 +1,406 @@
+#homeCarousel {        
+    .carousel-slide {
+        display: flex;
+        justify-content: center;
+        height: 450px;
+        
+        @include maxWidth('medium') {
+            height: 600px;
+            flex-wrap: wrap;
+        }
+
+        .column-left,
+        .column-right {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            max-width: 710px;
+            position: relative;
+        }
+
+        .column-left {
+            @include maxWidth('medium') {
+                max-width: 100%;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .column-right {
+            img {
+                @include maxWidth('medium') {
+                    width: 80%!important;
+                    margin: 0 auto 30px;
+                }
+            }
+
+            @include maxWidth('medium') {
+                max-width: 100%;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .slide-image {
+            max-height: 100%;
+        }
+
+        .slide-text {
+            max-width: calc (600px + 130px);
+            padding-left: 130px;
+            .slide-content {
+                margin-bottom: 15px;
+            }
+            @include maxWidth('medium') {
+                max-width: none;
+                padding: 5px 15px;
+                text-align: center;
+            }
+        }
+
+        h2, .h1, h1 {
+            font-size: 3.4375rem;
+            font-weight: 700;
+            @include maxWidth('medium') {
+                font-size: 2.1875rem!important;
+                line-height: 1.2em;
+            }
+        }
+
+        h2  {
+            color: $white;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: $white;
+            font-size: 1rem;
+            letter-spacing: 0;
+            line-height: 22px;
+            margin-bottom: 15px;
+            max-width: 500px;
+            @include maxWidth('medium') { 
+                font-size: 1.125rem!important;
+                margin: 0 auto 0;
+            }
+        }
+
+        .button {
+            min-width: 240px;
+            padding: 16px 10px 15px;
+            margin-top: 15px;
+        }
+    }
+
+    .kingc {
+        background-image: url(https://cdn11.bigcommerce.com/s-z6cvd38ohl/product_images/uploaded_images/king-c-gillette-new-banner.jpeg);
+        background-position: center;
+        background-size: cover;
+
+        .slide-content h2 {
+            line-height: .8em;
+            @include maxWidth('medium') {
+                font-size: 2.1875rem!important;
+            }
+        }
+
+        h4 {
+            color: $peachy;
+            font-weight: 700;
+            letter-spacing: 0;
+            line-height: 40px;
+            margin: 0;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            font-size: 50px;
+            @include maxWidth('medium') {
+                font-size: 2.1875rem!important;
+            }
+        }
+
+        .button {
+            background-color: $cool-green;
+            color: $darkest-blue;
+            border: none;
+            margin-bottom: 0;
+            &:hover {
+                background-color: lighten(desaturate(adjust-hue(#82b3a9, -168), 24.38), 39.41);
+            }
+        }
+
+        div {
+            color: $white;
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 0;
+            line-height: 22px;
+            margin-bottom: 10px;
+        }
+
+        .column-right {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-image {
+            max-width: 400px;
+        }
+    }
+
+    .venuspubichair {
+        background-image: url(https://cdn11.bigcommerce.com/s-z6cvd38ohl/product_images/uploaded_images/home-bg-venuspubichair.jpg);
+        background-position: center;
+        background-size: cover;
+
+        .slide-content {
+            .logo-venus {
+                display: flex;
+                align-items: baseline;
+                img {
+                    width: 180px;
+                }
+
+                .newFlag {
+                    width: 78px;
+                }
+            }
+
+            div {
+                color: $white;
+                font-size: 28px;
+                font-weight: 600;
+                letter-spacing: 0;
+                line-height: 33px;
+                margin-bottom: 15px;
+            }
+
+            h1 {
+                margin-bottom: 5px;
+                margin-top: 0;
+                font-size: 45px;
+                text-transform: capitalize;
+                color: $white;
+
+                &.notBold {
+                    font-weight: 400;
+                }
+            } 
+
+            h3 {
+                text-transform: capitalize;
+                margin-top: .5rem;
+                color: $white;
+                font-size: 28px;
+            }            
+        }
+
+        .button {
+            background-color: $white;
+            color: $light-blue;
+            border: none;
+            margin-bottom: 0;
+            text-transform: capitalize;
+            font-size: 1.5rem;
+            &:hover {
+                background-color: $white-smoke;
+            }
+        }
+
+        .column-right {
+            align-items: center;
+            justify-content: center;
+            .slide-image {
+                max-width: 555px;
+            }
+        }
+    }
+
+    .freestand {
+        background-color: $white-smoke;
+
+        .slide-text {
+            max-width: 660px;
+
+            h2,
+            h4 {
+                color: $dark-blue!important;
+                text-transform: uppercase;
+                font-size: 40px;
+                margin-top: 0;
+            }
+
+            h4 {
+                margin-top: 0;
+                margin-bottom: 1.2rem;
+                font-size: 25px;
+            }
+        }
+
+        .slide-subtext {
+            max-width: 1640px;
+            margin: 0 auto;            
+            font-size: 14px;
+            display: block;
+            @include breakpoint('medium') {
+                position: absolute;
+                bottom: 70px;
+                left: 129px;
+            }
+        }
+
+        .column-right {
+            align-items: center;
+            justify-content: center;
+            .slide-image {
+                height: 100%;
+                align-self: center;
+                img {
+                    max-height: 100%;
+                    max-width: 100%;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    .heated {
+        background-image: url(https://cdn11.bigcommerce.com/s-z6cvd38ohl/product_images/uploaded_images/hr-campaign-background-revised-v6.jpg);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        .iconBest {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            max-width: 10%;
+        }
+        
+        .slide-image {
+            @include breakpoint('medium') {
+                max-width: 400px;
+            }
+        }
+
+        h2 {
+            font-size: 50px;
+            line-height: 1em;
+        }
+        
+        p {
+            max-width: 380px;
+        }
+    }
+
+    .delivered {
+        background-color: $white-smoke;
+        background-position: center;
+        background-size: cover;
+        h2 {
+            color: $dark-blue!important;
+            font-size: 50px;
+            line-height: 1em;
+        }
+        .icons {
+            min-width: 305px;
+            max-width: 360px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            color: $dark-blue;
+            font-weight: 500;
+            .icon {
+                width: 150px;
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                height: 50px;
+            }
+            .icon-img {
+                text-align: center;
+                margin-right: 10px;
+                width: 53px;
+                img {
+                    position: static;
+                    display: block;
+                    height: 53px;
+                }
+            }
+        }
+        .column-right {
+            align-items: flex-end;
+            img {
+                @include breakpoint('medium') {
+                    padding-bottom: 120px;
+                }
+            }
+        }
+    }
+
+    &.slick-slider { 
+        .slick-arrow {
+            width: 45px;
+            height: 45px;
+            border-radius: 45px;
+            border: 2px solid rgba(255,255,255,.3);
+            background: 0 0;
+            color: $white;
+            transition: all .3s ease-in-out;
+
+            &.slick-prev, 
+            &.slick-next {
+                &:before {
+                    width: 7px;
+                    height: 12px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    margin: auto;
+                }
+            }
+
+            &.slick-prev {
+                left: 30px!important; 
+            }
+
+            &.slick-next {
+                right: 30px!important; 
+            }
+
+            &.slick-next {
+                &:before {
+                    background-image: url(https://cdn11.bigcommerce.com/s-z6cvd38ohl/stencil/6ffe1ac0-abc5-0139-ac02-0e7f6bd41f9c/e/e81bb390-9a6d-0139-048d-5a7398253c37/icons/gd-chevron-right.svg);
+                }
+            }
+
+            &.slick-prev {
+                &:before {
+                    background-image: url(https://cdn11.bigcommerce.com/s-z6cvd38ohl/stencil/6ffe1ac0-abc5-0139-ac02-0e7f6bd41f9c/e/e81bb390-9a6d-0139-048d-5a7398253c37/icons/gd-chevron-left.svg);
+                }
+            }
+        }
+
+        .slick-dots {
+            button {
+                display: block;
+                border: none;
+                border-radius: 0;
+                height: 2px;
+                width: 27px;
+                background-color: $white;
+                opacity: .3;
+                margin: 0 6px;
+                bottom: 50px;
+                &:before {
+                    display: none;
+                }
+            }
+
+            .slick-active {
+                button {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
