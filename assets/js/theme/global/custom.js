@@ -6,6 +6,8 @@ export default function () {
         menu();
         bannerTop();
         initEvents();
+        scrollHeader();
+        featuredCatTabs();
     }); 
 
     function homeCarousel() {
@@ -74,9 +76,48 @@ export default function () {
         });
     }
 
+    function closeMenu() {
+        const $navContainer = document.querySelector('.navPages-container');
+        const $btnToggleMenu = document.querySelector('.mobileMenu-toggle');
+        const $body = document.querySelector('body');
+        $navContainer.classList.remove('is-open');
+        $btnToggleMenu.classList.remove('is-open');
+        $body.classList.remove('has-activeNavPages');
+    }
+
+    
+    function scrollHeader() {
+        $(window).scroll(function(){
+            $('.header').toggleClass('scrolled', $(this).scrollTop() > 15);
+        });
+    }
+
+    function featuredCatTabs() {
+        $(document).on("click", ".featured-categories-tab", function(e) {
+            $('.featured-categories-tab').each(function (){
+                $(this).removeClass('is-active');
+            })
+            $(this).addClass('is-active');
+            if($(this).hasClass('for-men')) {
+                document.getElementById("for_men").click();
+            }
+            else {
+                document.getElementById("for_women").click();
+            }
+            $('html, body').animate({
+                scrollTop: $('#featuredCat').offset().top - 20
+            }, 800 );
+        });
+    }
+
     function initEvents() {
+
+        const $navWrap = document.querySelector('.navPages-container-wrap');
+        
         window.addEventListener("resize", () => {
             $('[data-banner-carousel]').slick("refresh");
         });
+
+        $navWrap.addEventListener('click', closeMenu);
     }
 }

@@ -30,11 +30,27 @@
         {{/if}}
         <div class="navPages-container" id="menu" data-menu>
             {{> components/common/navigation-menu}}
+            <div class="navPages-container-wrap"></div>
         </div>
         <div class="navUsers-container">
             {{> components/common/navigation}}
         </div>
     </div>
 </header>
+
+{{#if page_type '==' 'default'}} 
+<div class="featured-categories-tabs">
+    <div class="featured-categories-tab for-men is-active">
+        <a href="#featuredCategories" class="tab-link">
+            SHOP MEN
+        </a>
+    </div>
+    <div class="featured-categories-tab for-women">
+        <a href="#featuredCategories" class="tab-link">
+            SHOP WOMEN
+        </a>
+    </div>
+</div>
+{{/if}}
 {{{region name="header_bottom--global"}}}
 {{{region name="header_bottom"}}}

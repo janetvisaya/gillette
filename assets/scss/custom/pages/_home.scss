@@ -2,7 +2,7 @@
     &.body {
         margin-top: 0;
         @include maxWidth('medium') {
-            margin-top: 55px;
+            // margin-top: 55px;
         }
     }
 
@@ -194,6 +194,41 @@
             @include breakpoint("small") {
                 position: relative;
             }
+        }
+    }
+}
+
+.featured-categories-tabs {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    height: 50px;
+    @include breakpoint("small") {
+        display: none;
+    }
+    .featured-categories-tab {
+        width: 50%;
+        text-align: center;
+        background-color: $white-smoke;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:nth-child(1) {
+            border-right: 1px solid white;
+        }
+        &.is-active {
+            a {
+                color: $light-blue;
+            }
+        }
+        a {
+            text-decoration: none;
+            color: $dark-blue;
+            font-size: 1rem;
+            font-weight: 500;
+            
         }
     }
 }

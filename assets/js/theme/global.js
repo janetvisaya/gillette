@@ -28,7 +28,8 @@ export default class Global extends PageManager {
         foundation($(document));
         quickView(this.context);
         carousel(this.context);
-        menu();
+        // menu();
+        mobileMenu();
         mobileMenuToggle();
         privacyCookieNotification();
         if (showAdminBar) {
@@ -37,5 +38,15 @@ export default class Global extends PageManager {
         loadingProgressBar();
         svgInjector();
         customjs();
+    }
+}
+
+function mobileMenu() {
+    let isMobile = () => {
+        return window.innerWidth < 801;
+    };
+
+    if (isMobile()) {
+        menu();
     }
 }

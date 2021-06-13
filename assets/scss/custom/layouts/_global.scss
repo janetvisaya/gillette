@@ -9,6 +9,7 @@ body {
     font-size: 1rem;
     font-weight: 400;
     padding: 0;
+    scroll-behavior: smooth;
     &.dim:after {
         visibility: visible;
         opacity: 1;

@@ -1,9 +1,15 @@
 header.header {
-    @include maxWidth("medium") {
-        top: 40px;
-        &.is-open{
-            height: 50px;
+    transition: all .3s;
+    position: sticky;
+    top: 0;
+
+    &.scrolled {
+        @include breakpoint("medium") {
+            height: 49px;
         }
+    }
+    @include maxWidth("medium") {
+        height: 65px;
     }
     .container {
         max-width: 88.75rem;
@@ -100,6 +106,7 @@ header.header {
     @include maxWidth('medium') {
         .mobileMenu-toggle {
             padding: 0 15px;
+            z-index: 999;
         }
     }
 }

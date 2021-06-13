@@ -1,18 +1,38 @@
 {{#if children}}
 <a class="navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
    href="{{url}}"
+   data-collapsible="navPages-{{snakecase name}}"
 >
     {{chop name}}
     <i class="icon navPages-action-moreIcon" aria-hidden="true">
         <svg><use xlink:href="#icon-chevron-down" /></svg>
     </i>
 </a>
-<div class="navPage-subMenu">
+<div class="navPage-subMenu" id="navPages-{{snakecase name}}" aria-hidden="true" tabindex="-1">
     <ul class="navPage-subMenu-list">
         {{#each children}}
             <li class="navPage-subMenu-item">
                 {{#if children}}
-                    <ul class="navPage-childList">
+                    <a class="navPage-subMenu-action navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
+                        href="{{url}}"
+                        aria-label="{{name}}"
+                        
+                    >
+                        {{#if image '!=' null}}
+                            <img src="{{getImageSrcset image 1x=(default default_image '156w')}}" alt="" srcset="">
+                        {{/if}}
+                        <span>{{chop name}}</span>
+                        
+                        <span class="collapsible-icon-wrapper"
+                            data-collapsible="navPages-{{snakecase name}}"
+                            
+                        >
+                            <i class="icon navPages-action-moreIcon" aria-hidden="true">
+                                <svg><use xlink:href="#icon-chevron-down" /></svg>
+                            </i>
+                        </span>
+                    </a>
+                    <ul class="navPage-childList" id="navPages-{{snakecase name}}" aria-hidden="true" tabindex="-1">
                         {{#if (chop (toLowerCase ../name)) '==' 'subscribe'}}
                             {{#each children}}
                                 {{#if (chop name) '==' 'Shop Now'}}

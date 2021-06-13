@@ -1,13 +1,13 @@
-<section class="featured-categories-container">
+<section id="featuredCat" class="featured-categories-container">
     <ul class="tabs" data-tab role="tablist">
         {{#each pages}}
             {{#or (if (snakecase (toLowerCase name)) '==' 'for_men') (if (snakecase (toLowerCase name)) '==' 'for_women') }} 
             <li class="tab{{#if @index '==' 1}} is-active{{/if}}" role="presentation">
-                <a class="tab-title" href="#{{snakecase (toLowerCase name)}}" role="tab" tabindex="{{@index}}" aria-selected="{{#if @index '==' 1}} is-active{{else}} false{{/if}}" controls="{{snakecase (toLowerCase name)}}">
+                <a id="{{snakecase (toLowerCase name)}}" class="tab-title" href="#{{snakecase (toLowerCase name)}}" role="tab" tabindex="{{@index}}" aria-selected="{{#if @index '==' 1}} is-active{{else}} false{{/if}}" controls="{{snakecase (toLowerCase name)}}">
                     {{#if (chop (toLowerCase name)) '==' 'for men'}}
                         SHOP MEN
                     {{else if (chop (toLowerCase name))'==' 'for women'}}
-                        FOR WOMEN
+                        SHOP WOMEN
                     {{else}}
                         {{chop name}}
                     {{/if}}
