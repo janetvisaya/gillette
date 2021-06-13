@@ -32,6 +32,12 @@ body, html {
     height: auto;
 }
 
+.body {
+    @include maxWidth("medium") {
+        margin-top: 4rem;
+    }
+}
+
 h1, h2, h3, h4, h5, h6 {
     color: #444;
     font-family: Jost,Arial,Helvetica,sans-serif;

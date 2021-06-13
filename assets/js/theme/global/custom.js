@@ -4,6 +4,8 @@ export default function () {
     $(function () {
         homeCarousel();
         menu();
+        bannerTop();
+        initEvents();
     }); 
 
     function homeCarousel() {
@@ -51,5 +53,30 @@ export default function () {
 
         document.getElementById('nav-quick-search').addEventListener('blur', dimBody);
         document.getElementById('nav-quick-search').addEventListener('focus', dimBody);
+    }
+
+    function bannerTop() {
+        $('[data-banner-carousel]').slick({
+            "dots": false,
+            "infinite": true,
+            "mobileFirst": true,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "arrows": false,
+            "autoplay": true,
+            "autoplaySpeed": 2000,
+            "responsive": [
+                {
+                    "breakpoint": 1024,
+                    "settings": 'unslick'
+                }
+            ]
+        });
+    }
+
+    function initEvents() {
+        window.addEventListener("resize", () => {
+            $('[data-banner-carousel]').slick("refresh");
+        });
     }
 }

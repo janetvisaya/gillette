@@ -1,0 +1,35 @@
+.banners { 
+    padding: 0; 
+    &.custom-banner {
+        background-color: $dark-blue;
+    }
+    [data-banner-carousel] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        @include maxWidth('medium') {
+            height: 40px;
+        }
+        .promo-message {
+            margin: 0 2px;
+            span {
+                line-height: 1.5;
+                font-size: .75rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                position: relative;
+                display: block;
+            }
+        }
+    }
+}
+
+.home-strip-banner {
+    background-color: $white-1;
+    text-align: center;
+    padding: 12px 25px;
+    color: $dark-blue;
+    text-transform: uppercase;
+    letter-spacing: .44px;
+}

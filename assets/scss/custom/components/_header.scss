@@ -1,5 +1,6 @@
 header.header {
     @include maxWidth("medium") {
+        top: 40px;
         &.is-open{
             height: 50px;
         }
@@ -78,7 +79,6 @@ header.header {
         }
     }
     @include breakpoint('medium') {
-        top: 50px;
         height: 100px;
         .container 
         .header-logo {

@@ -1,5 +1,6 @@
 .home {
     &.body {
+        margin-top: 0;
         @include maxWidth('medium') {
             margin-top: 55px;
         }
