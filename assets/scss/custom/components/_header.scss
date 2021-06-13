@@ -6,6 +6,9 @@ header.header {
     &.scrolled {
         @include breakpoint("medium") {
             height: 49px;
+            .navPages-action.has-subMenu {
+                line-height: 50px;
+            }
         }
     }
     @include maxWidth("medium") {
