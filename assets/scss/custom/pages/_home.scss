@@ -5,4 +5,195 @@
             margin-top: 55px;
         }
     }
+
+    .container {
+        max-width: none;
+        padding: 0;
+    }
+
+    .featured-categories-container {
+        padding-top: 2.6rem;
+        .tabs {
+            display: flex;
+            justify-content: center;
+            @include maxWidth('medium') {
+                border: none;
+                outline: 0;
+            }
+            .tab {
+                max-width: 50%;
+                width: 380px;
+                &.is-active a {
+                    background-color: $white;
+                    box-shadow: 0px -14px 14px 0px #eeeeee;
+                    border-left: 1px solid #e5e5e5;
+                    border-right: 1px solid #e5e5e5;
+                    border-top: 1px solid #e5e5e5;
+                }
+                a {
+                    height: 69px;
+                    padding: 25px 0 0 0;
+                    width: 100%;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    text-align: center;
+                    margin: 0;
+                    text-transform: uppercase;
+                    color: $dark-blue;
+                    position: relative;
+                    background-color: #e5e5e5;
+                }
+            }
+        }
+        .tab-content {
+            &.is-active {
+                justify-content: center;
+                display: flex;
+            }
+        }
+    }
+
+    .featured-categories-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 1rem;
+        width: 100%;
+        max-width: 1400px;
+        @include maxWidth("small") {
+            justify-content: space-between;
+            padding: 0 15px;
+        }
+        .featured-category-wrapper {
+            width: 31%;
+            margin: calc(10% / 3 / 3);
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+            @include maxWidth("small") {
+                width: 45%;
+                padding: 0 0 30px 0;
+                height: 130px;
+                margin: 0;
+            }
+            /*** For men ***/
+            &.razor-trimmers {
+                order: 1;
+                a {
+                    background-image: url('https://cdn11.bigcommerce.com/s-z6cvd38ohl/stencil/3794ff50-acc6-0139-ca75-222589ebb45b/e/e81bb390-9a6d-0139-048d-5a7398253c37/img/home-tabs/homeTabs_4.jpg');
+                }
+                
+            }
+
+            &.blade-refills {
+                order: 2;
+                a {
+                    background-image: url('https://cdn11.bigcommerce.com/s-z6cvd38ohl/stencil/3794ff50-acc6-0139-ca75-222589ebb45b/e/e81bb390-9a6d-0139-048d-5a7398253c37/img/home-tabs/homeTabs_5.jpg');
+                }
+            }
+
+            &.gifts-accessories {
+                order: 3;
+                a {
+                    background-image: url('https://cdn11.bigcommerce.com/s-z6cvd38ohl/stencil/3794ff50-acc6-0139-ca75-222589ebb45b/e/e81bb390-9a6d-0139-048d-5a7398253c37/img/home-tabs/homeTabs_6.jpg');
+                }
+            }
+            &.beard-care-body {
+                order: 4;
+                a {
+                    background-image: url('https://cdn11.bigcommerce.com/s-z6cvd38ohl/stencil/3794ff50-acc6-0139-ca75-222589ebb45b/e/e81bb390-9a6d-0139-048d-5a7398253c37/img/home-tabs/homeTabs_7.jpg');
+                }
+                span {
+                    color: $white;
+                    &:after {
+                        @include breakpoint('small') {
+                            background-image: url('https://cdn11.bigcommerce.com/s-z6cvd38ohl/stencil/3794ff50-acc6-0139-ca75-222589ebb45b/e/e81bb390-9a6d-0139-048d-5a7398253c37/img/white-arrow.svg');
+                        }
+                    }
+                }
+            }
+
+            &.heated-razor {
+                order: 5;
+                a {
+                    background-image: url('https://cdn11.bigcommerce.com/s-z6cvd38ohl/stencil/3794ff50-acc6-0139-ca75-222589ebb45b/e/e81bb390-9a6d-0139-048d-5a7398253c37/img/home-tabs/homeTabs_8.jpg');
+                }
+            }
+
+            &.electric-hair-removal {
+                order: 6;
+                a {
+                    background-image: url('https://cdn11.bigcommerce.com/s-z6cvd38ohl/product_images/uploaded_images/mens-electrical-reversed.png');
+                }
+            }
+            /*** For women ***/
+            &.razors {
+                a {
+                    background-image: url("https://cdn11.bigcommerce.com/s-z6cvd38ohl/product_images/uploaded_images/womens-venus-razors.jpg");
+                }
+            }
+
+            &.pubic-hair-skin {
+                a {
+                    background-image: url("https://cdn11.bigcommerce.com/s-z6cvd38ohl/product_images/uploaded_images/womens-venus-puc-grooming.jpg");
+                }
+            }
+
+            &.accessories {
+                a {
+                    background-image: url('https://cdn11.bigcommerce.com/s-z6cvd38ohl/product_images/uploaded_images/womens-venus-accessories.jpg');
+                }
+            }
+        }
+
+        span {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            color: $dark-grey;
+            text-transform: capitalize;
+            text-decoration: underline; 
+            font-size: 1.125rem;
+            font-weight: 500;
+            &:after {
+                content: '';
+                display: block;
+                background-image: url('https://cdn11.bigcommerce.com/s-z6cvd38ohl/stencil/3794ff50-acc6-0139-ca75-222589ebb45b/e/e81bb390-9a6d-0139-048d-5a7398253c37/img/blue-arrow.svg');
+                width: 10px;
+                height: 14px;
+                right: -17px;
+                position: absolute;
+                background-repeat: no-repeat;
+                top: 7px;
+            }
+            @include maxWidth('small') {
+                bottom: 4px;
+                font-size: 1.125rem;
+                color: $dark-blue!important;
+                left: 0;
+            }
+        }
+
+        a.featured-category {
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            transform: scale(1);
+            transition: all .7s ease-in-out;
+            overflow: hidden;
+            display: inherit;
+            
+            &:hover {
+                transform: scale(1.120);
+                span {
+                    text-decoration: none;
+                }
+            }
+            @include breakpoint("small") {
+                position: relative;
+            }
+        }
+    }
 }

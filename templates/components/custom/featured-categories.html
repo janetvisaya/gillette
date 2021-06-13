@@ -1,0 +1,56 @@
+<section class="featured-categories-container">
+    <ul class="tabs" data-tab role="tablist">
+        {{#each pages}}
+            {{#or (if (snakecase (toLowerCase name)) '==' 'for_men') (if (snakecase (toLowerCase name)) '==' 'for_women') }} 
+            <li class="tab{{#if @index '==' 1}} is-active{{/if}}" role="presentation">
+                <a class="tab-title" href="#{{snakecase (toLowerCase name)}}" role="tab" tabindex="{{@index}}" aria-selected="{{#if @index '==' 1}} is-active{{else}} false{{/if}}" controls="{{snakecase (toLowerCase name)}}">
+                    {{#if (chop (toLowerCase name)) '==' 'for men'}}
+                        SHOP MEN
+                    {{else if (chop (toLowerCase name))'==' 'for women'}}
+                        FOR WOMEN
+                    {{else}}
+                        {{chop name}}
+                    {{/if}}
+                </a>
+            </li>
+            {{/or}}
+        {{/each}}
+    </ul>
+    
+    <div class="tabs-contents">
+        {{#each pages}}
+            {{#or (if (snakecase (toLowerCase name)) '==' 'for_men') (if (snakecase (toLowerCase name)) '==' 'for_women') }}
+                <div role="tabpanel" aria-hidden="{{#if @index '==' 1}} true{{else}} false{{/if}}" class="tab-content{{#if @index '==' 1}} is-active{{/if}}" id="{{snakecase (toLowerCase name)}}">
+                    <div class="featured-categories-wrapper">
+                        {{#each children}}
+                            {{#if (chop (toLowerCase name)) '==' 'products'}}
+                                {{#each (limit children 6)}}
+                                {{#if (chop (toLowerCase name)) '!==' 'all products'}}
+                                <div class="featured-category-wrapper {{dashcase (toLowerCase name)}}">
+                                    <a href="{{url}}" class="featured-category"> 
+                                    </a>
+                                    <span>
+                                        {{#if (chop (toLowerCase name)) '==' 'beard care & body'}}
+                                            Beard Care
+                                        {{else if (chop (toLowerCase name))'==' 'razor & trimmers'}}
+                                            Razors 
+                                        {{else if (chop (toLowerCase name))'==' 'gifts & accessories'}}
+                                            Accessories                                            
+                                        {{else if (chop (toLowerCase name)) '==' 'electric hair removal'}}
+                                            Electrical
+                                        {{else}}
+                                            {{chop name}}
+                                        {{/if}}
+                                    </span>
+                                </div>
+                                    
+                                {{/if}}
+                                {{/each}}
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+            {{/or}}
+        {{/each}}
+    </div>
+</section>
