@@ -12,6 +12,7 @@
         .column-left,
         .column-right {
             display: flex;
+            justify-content: center;
             align-items: center;
             width: 50%;
             max-width: 710px;

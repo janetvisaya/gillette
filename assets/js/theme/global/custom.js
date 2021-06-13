@@ -3,6 +3,7 @@ import 'slick-carousel';
 export default function () {
     $(function () {
         homeCarousel();
+        menu();
     }); 
 
     function homeCarousel() {
@@ -24,5 +25,31 @@ export default function () {
                 }
             ]
         });
+    }
+
+    function menu() {
+        let isMobile = () => {
+            return window.innerWidth < 801;
+        };
+        let dimBody = () => {
+            $("body").toggleClass("dim");
+        }
+        let toggleSubMenu = (el)=> {
+            if (!isMobile()) {
+                $(el.currentTarget).find(".navPage-subMenu").toggleClass("is-open");
+                dimBody();
+            }
+        }
+
+        $(document)
+            .on("mouseover", ".navPages-item.navPages-item-page", function (e) {
+                toggleSubMenu(e);
+            })
+            .on("mouseout", ".navPages-item.navPages-item-page", function (e) {
+                toggleSubMenu(e);
+            });
+
+        document.getElementById('nav-quick-search').addEventListener('blur', dimBody);
+        document.getElementById('nav-quick-search').addEventListener('focus', dimBody);
     }
 }

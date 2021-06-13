@@ -1,0 +1,105 @@
+header.header {
+    @include maxWidth("medium") {
+        &.is-open{
+            height: 50px;
+        }
+    }
+    .container {
+        max-width: 88.75rem;
+        width: 90%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        position: static;
+    }
+    .header-logo{
+        @include maxWidth("medium") {
+            margin: 0;
+        }
+        .header-logo-image {
+            @include maxWidth("medium") {
+                max-height: 30px;
+            }
+        }
+    }
+    .mobileMenu-action {
+        &--quickSearch {
+            position: absolute;
+            left: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-top: 2px;
+        }
+        @include breakpoint('medium') {
+            display: none;
+        }
+    }
+
+    svg#iconSearch {
+        width: 22px;
+        height: 22px;
+        fill: $dark-blue;
+        stroke: $dark-blue;
+        g,
+        path,
+        line {
+            fill: $dark-blue;
+            stroke: $dark-blue;
+        }
+    }
+    svg#iconUser {
+        width: 22px;
+        height: 22px;
+        fill: $dark-blue;
+        stroke: $dark-blue;
+        g,
+        path,
+        ellipse,
+        circle,
+        line {
+            fill: $dark-blue;
+            stroke: $dark-blue;
+        }
+    }
+    svg#iconCart {
+        width: 20px;
+        height: 24px;
+        fill: $dark-blue;
+        stroke: $dark-blue;
+        g,
+        path,
+        ellipse,
+        circle,
+        line {
+            fill: $dark-blue;
+            stroke: $dark-blue;
+        }
+    }
+    @include breakpoint('medium') {
+        top: 50px;
+        height: 100px;
+        .container 
+        .header-logo {
+            flex: 1;
+            text-align: left;
+            margin: 0;
+            .header-logo-image {                
+                max-height: 35px;
+                @include maxWidth("medium") {
+                    max-height: 30px;
+                }
+            }
+            .header-logo-image-container {
+                min-height: 0;
+            }
+        }
+    }
+
+    @include maxWidth('medium') {
+        .mobileMenu-toggle {
+            padding: 0 15px;
+        }
+    }
+}

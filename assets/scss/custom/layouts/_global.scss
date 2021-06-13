@@ -9,7 +9,23 @@ body {
     font-size: 1rem;
     font-weight: 400;
     padding: 0;
-    
+    &.dim:after {
+        visibility: visible;
+        opacity: 1;
+    }
+    &:after {
+        content: '';
+        position: fixed;
+        z-index: 50;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(5,14,31,.6);
+        visibility: hidden;
+        opacity: 0;
+        transition: all .3s ease-in-out;
+    }
 }
 
 body, html {
@@ -24,8 +40,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: .78571rem;
 }
 
-p {
+p,
+li {
     font-size: 1rem;
+    font-weight: 400;
 }
 
 .button {
@@ -69,4 +87,20 @@ p {
             color: $rust-brown;
         }
     }
+    
+    &--small {
+        font-size: 13px;
+        padding: 0.57143rem 1.5rem;
+    }
+}
+
+input:focus, 
+button:focus, 
+textarea:focus, 
+select:focus, 
+details:focus, 
+[href]:focus, 
+[tabindex]:not([tabindex="-1"]):focus, 
+[contenteditable="true"]:focus {
+    outline: none!important;
 }

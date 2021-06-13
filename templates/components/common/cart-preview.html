@@ -1,5 +1,9 @@
-<div class="previewCartWrapper">
-  <div class="previewCart">
+<div class="previewCartWrapper"> 
+    <div class="previewCart">
+        <div class="previewCartItem-header">
+            <span class="title">Order Summary</span>
+            <span class="close" data-close-minicart="">Close</span>
+        </div>
     {{#if cart.items.length}}
         <ul class="previewCartList">
             {{#each (limit cart.items 4)}}

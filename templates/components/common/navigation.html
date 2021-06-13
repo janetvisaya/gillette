@@ -42,7 +42,7 @@
                aria-controls="quickSearch"
                aria-label="{{lang 'common.search'}}"
             >
-                {{lang 'common.search'}}
+            <svg id="iconSearch"><use xlink:href="#icon-search" /></svg>
             </button>
         </li>
         {{#if settings.gift_certificates_enabled}}
@@ -74,17 +74,8 @@
                    href="{{urls.auth.login}}"
                    aria-label="{{lang 'common.login'}}"
                 >
-                    {{lang 'common.login'}}
-                </a>
-                {{#if settings.account_creation_enabled}}
-                    <span class="navUser-or">{{lang 'common.or'}}</span>
-                    <a class="navUser-action"
-                       href="{{urls.auth.create_account}}"
-                       aria-label="{{lang 'common.sign_up'}}"
-                    >
-                        {{lang 'common.sign_up'}}
-                    </a>
-                {{/if}}
+                <svg id="iconUser"><use xlink:href="#icon-user" /></svg>
+                </a>                
             {{/if}}
         </li>
         <li class="navUser-item navUser-item--cart">
@@ -95,11 +86,16 @@
                href="{{urls.cart}}"
                aria-label="{{lang 'cart.nav_aria_label'}}"
             >
-                <span class="navUser-item-cartLabel">{{lang 'common.cart'}}</span>
+                <span class="navUser-item-cartLabel">
+                    <svg id="iconCart"><use xlink:href="#icon-cart" /></svg>
+                </span>
                 <span class="countPill cart-quantity"></span>
             </a>
 
             <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
+        </li>
+        <li class="navUser-item navUser-item--flag">
+            <svg id="iconFlag"><use xlink:href="#icon-flag" /></svg>
         </li>
     </ul>
     <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" data-prevent-quick-search-close>

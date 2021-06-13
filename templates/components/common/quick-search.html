@@ -1,5 +1,5 @@
 <div class="container">
-    <form class="form" onsubmit="return false" data-url="{{urls.search}}" data-quick-search-form>
+    <form class="form" action="/search.php">
         <fieldset class="form-fieldset">
             <div class="form-field">
                 <label class="is-srOnly" for="{{name}}">{{lang "search.quick_search.input_label"}}</label>
@@ -11,6 +11,14 @@
                        placeholder="{{lang 'search.quick_search.input_placeholder'}}"
                        autocomplete="off"
                 >
+                <button type="submit">
+                    <svg id="iconArrowRight">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use>
+                    </svg>                
+                </button>
+                <span class="close-btn" type="button" title="Close" data-drop-down-close=""> 
+                    Close
+                </span>
             </div>
         </fieldset>
     </form>

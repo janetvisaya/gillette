@@ -1,50 +1,52 @@
 {{#if children}}
 <a class="navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
    href="{{url}}"
-   data-collapsible="navPages-{{id}}"
 >
-    {{name}}
+    {{chop name}}
     <i class="icon navPages-action-moreIcon" aria-hidden="true">
         <svg><use xlink:href="#icon-chevron-down" /></svg>
     </i>
 </a>
-<div class="navPage-subMenu" id="navPages-{{id}}" aria-hidden="true" tabindex="-1">
+<div class="navPage-subMenu">
     <ul class="navPage-subMenu-list">
-        <li class="navPage-subMenu-item">
-            <a class="navPage-subMenu-action navPages-action"
-               href="{{url}}"
-               aria-label="{{lang 'category.view_all.name' category=name}}"
-            >
-                {{lang 'category.view_all.name' category=name}}
-            </a>
-        </li>
         {{#each children}}
             <li class="navPage-subMenu-item">
                 {{#if children}}
-                    <a class="navPage-subMenu-action navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
-                       href="{{url}}"
-                       aria-label="{{name}}"
-                    >
-                        {{name}}
-                        <span class="collapsible-icon-wrapper"
-                            data-collapsible="navPages-{{id}}"
-                            data-collapsible-disabled-breakpoint="medium"
-                            data-collapsible-disabled-state="open"
-                            data-collapsible-enabled-state="closed"
-                        >
-                            <i class="icon navPages-action-moreIcon" aria-hidden="true">
-                                <svg><use xlink:href="#icon-chevron-down" /></svg>
-                            </i>
-                        </span>
-                    </a>
-                    <ul class="navPage-childList" id="navPages-{{id}}">
+                    <ul class="navPage-childList">
+                        {{#if (chop (toLowerCase ../name)) '==' 'subscribe'}}
+                            {{#each children}}
+                                {{#if (chop name) '==' 'Shop Now'}}
+                                <img class="navPage-childList-Banner" src="https://cdn11.bigcommerce.com/s-z6cvd38ohl/product_images/uploaded_images/megamenu-1.jpg">
+                                {{/if}}
+                            {{/each}} 
+                        {{/if}}
+
+                        {{#if (chop (toLowerCase ../name)) '==' 'for men'}}
+                            {{#each children}}
+                                {{#if (chop name) '==' 'Shop Now'}}
+                                <img class="navPage-childList-Banner" src="https://cdn11.bigcommerce.com/s-z6cvd38ohl/product_images/uploaded_images/megamenu-4.jpg">
+                                {{/if}}
+                            {{/each}} 
+                        {{/if}}
+
+                        {{#if (chop (toLowerCase ../name)) '==' 'for women'}}
+                            {{#each children}}
+                                {{#if (chop name) '==' 'Shop Now'}}
+                                <img class="navPage-childList-Banner" src="https://cdn11.bigcommerce.com/s-z6cvd38ohl/product_images/uploaded_images/megamenu-5.jpg">
+                                {{/if}}
+                            {{/each}} 
+                        {{/if}}
+                        
+                        <li class="navPage-childList-item childList-header">
+                            <p class="title">{{chop name}}</p>
+                        </li>
                         {{#each children}}
                         <li class="navPage-childList-item">
-                            <a class="navPage-childList-action navPages-action{{#if is_active}} activePage{{/if}}"
+                            <a class="navPage-childList-action navPages-action{{#if is_active}} activePage{{/if}}{{#or (if (chop name) '==' 'All Subscription Razors') (if (chop name) '==' 'Shop Now') (if (chop name) '==' 'All Products')}} navPages-action--underlined{{/or}} "
                                href="{{url}}"
                                aria-label="{{name}}"
                             >
-                                {{name}}
+                                {{chop name}}
                             </a>
                         </li>
                         {{/each}}
@@ -54,7 +56,7 @@
                        href="{{url}}"
                        aria-label="{{name}}"
                     >
-                        {{name}}
+                        {{chop name}}
                     </a>
                 {{/if}}
             </li>
